@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import "./App.css"
-
 import Table from "./showdata";
 export default function Grocery() {
   const [name,sname ] = useState("");
@@ -10,26 +9,18 @@ export default function Grocery() {
   const [sal,ssal ] = useState("");
   const [married,sm ] = useState(false);
   const [dis,sds ] = useState("none");
-  
-  
   const add = () => {
     if(name==""||age==''||dd==''||sal=='')
     return
-
-
-
-   let  obj=  {
+  let  obj=  {
       
       "name":name,
       "age":age,
       "add":dd,
       "salary":sal,
       "married":married
-
-      
-    }
+ }
     console.log(obj)
-
     fetch("http://localhost:3000/List",{
       method:"POST",
       body:JSON.stringify(obj),
@@ -42,14 +33,8 @@ sage("")
 sadd("")
 ssal("")
 sname('')
-  
-    
-  
   };
-
- 
-
-  return (
+return (
 
     <> 
     <button className="button-30" onClick={()=>dis=="none"?sds("block"):sds("none")}>{dis=="none"?"Add Empolye":"Show Empolye"}</button>
@@ -90,9 +75,7 @@ sname('')
       />   
 <br/>
       <button className="button-30" onClick={add}>Add Employe</button>
-       
-
-      </div>
+         </div>
       <div style={{diplay:dis=="none"?"block":"none"}}>
       <Table />
       </div>
