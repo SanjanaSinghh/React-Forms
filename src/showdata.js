@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import Gitems from "./list";
 import "./App.css"
-
-
-
 export default function Table(){
-     
     const [allitem, new___add] = useState([]);
     useEffect(()=>{
         fetch("http://localhost:3000/List")
@@ -21,12 +17,8 @@ export default function Table(){
             "Content-Type":"application/json"
           }
         })
-    
-        
       };
-
-
-      return(
+ return(
         <>
         <h3>
           <table>
